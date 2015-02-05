@@ -1,0 +1,33 @@
+<div .row>
+    <div .col-xs-12>
+        $maybe r <- can (coreR AdminHomeR) "GET"
+            <a href=@{r}>
+                <span .glyphicon .glyphicon-arrow-left>
+                _{Msg.Back}
+<div .page-header>
+    <h1>_{Msg.TutorialIndex}
+    $maybe r <- can (tutorialR TutorialAdminNewR) "GET"
+        <a .btn .btn-primary .btn-xs href=@{r}>
+            <span .glyphicon .glyphicon-plus>
+            _{Msg.NewTutorial}
+<div .row>
+    <div .col-xs-12>
+        $if null tutorials
+            <p .alert .alert-info>_{Msg.NoTutorialsFound}
+        $else
+            <div .table-responsive>
+                <table .table .table-striped .table-hover>
+                    <thead>
+                        <tr>
+                            <th>_{Msg.Title}
+                            <th>_{Msg.CreatedOn}
+                    <tbody>
+                        $forall (Entity tutorialId tutorial) <- tutorials
+                            $with mroute <- can (tutorialR $ TutorialAdminEditR tutorialId) "GET"
+                                <tr :isJust mroute:onclick="document.location.href='@{fromJust mroute}'">
+                                    <td>
+                                        $maybe r <- mroute
+                                            <a href=@{r}>#{tutorialTitle tutorial}
+                                        $nothing
+                                            #{tutorialTitle tutorial}
+                                    <td>#{show $ utctDay $ tutorialCreatedAt tutorial}

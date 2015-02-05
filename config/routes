@@ -1,0 +1,3 @@
+/                 TutorialAdminIndexR   GET
+/new              TutorialAdminNewR     GET POST
+!/#TutorialId        TutorialAdminEditR    GET PATCH DELETE
