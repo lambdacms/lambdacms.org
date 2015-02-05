@@ -1,0 +1,10 @@
+<div .row .text-center>
+    <div .col-sx-12>
+        <h1>
+            <img src=@{StaticR img_logo_svg} .center-block .img-responsive .logo>
+
+        <ul .list-inline>
+            <li>^{githubSocial "lambdacms" (Just "lambdacms-core") "watch"}
+            <li>^{githubSocial "lambdacms" (Just "lambdacms-core") "fork"}
+
+#{pageMarkdown page}

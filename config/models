@@ -1,0 +1,5 @@
+UserRole
+    userId UserId
+    roleName RoleName
+    UniqueUserRole userId roleName
+    deriving Typeable Show
