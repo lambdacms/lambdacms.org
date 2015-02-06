@@ -151,15 +151,9 @@ instance YesodAuth App where
     -- Override the above two destinations when a Referer: header is present
     redirectToReferer _ = True
 
-    getAuthId creds = do
-        timeNow <- lift getCurrentTime
-        runDB $ do
-            x <- getBy $ UniqueEmail $ credsIdent creds
-            case x of
-                Just (Entity uid _) -> do
-                    _ <- update uid [UserLastLogin =. Just timeNow] -- update last login time during the login process
-                    return $ Just uid
-                Nothing -> return Nothing
+    getAuthId = getLambdaCmsAuthId
+
+    maybeAuthId = lambdaCmsMaybeAuthId
 
     -- You can add other plugins like BrowserID, email or OAuth here
     authPlugins _ = [authBrowserId def]
