@@ -1,4 +1,5 @@
-<div .row>
-    <div .col-xs-12 .col-md-4>
-        <h3>#{tutorialTitle tutorial}
-        #{tutorialContent tutorial}
+<main #more>
+    <div .wrapper>
+        <section ##{tutorialTitle tutorial} .level1>
+            <h3>#{tutorialTitle tutorial}
+            #{tutorialContent tutorial}

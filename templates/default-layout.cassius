@@ -1,76 +1,38 @@
-iframe
-    border: none
-    &.github-btn
-        height: 20px
+.logotype-imgfix
+    background-position: 24px center
+    padding-left: 24px
+    height: 100%
+    line-height: 48px
+    position: absolute
+    float: left
+    top: 0
 
-    &.btn-fork
-        width: 74px
-
-    &.btn-watch
-        width: 72px
-
-    &.btn-follow
-        width: 140px
-
-ul
-    list-style: none
-
-footer
-    padding-top: 50px
-    padding-bottom: 50px
-    background-color: #f2f2f2
+.logotype-imgfix2
+    background-position: 24px center
+    padding-left: 24px
+    height: 80%
+    line-height: 48px
+    float: left
+    top: 0
+    bottom:0
 
 
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode
-    margin: 0
-    padding: 0
-    vertical-align: baseline
-    border: none
+.logo-ribbon
+    position: relative
 
-table.sourceCode
-    width: 100%
-    line-height: 100%
+.logo-ribbon img
+    position: absolute
+    top: 0
+    bottom: 0
+    margin: auto
 
-td.lineNumbers
-    text-align: right
-    padding-right: 4px
-    padding-left: 4px
-    background-color: #dddddd
+.disp-inline
+    display: inline
 
-td.sourceCode
-    padding-left: 5px
+ul.list-inline li
+    display: inline
+    float: right
 
-code > span
-    &.kw, .al, .er
-        font-weight: bold
-
-    &.dt
-        color: #800000
-
-    &.dv
-        color: #0000ff
-
-    &.bn
-        color: #0000ff
-
-    &.fl
-        color: #800080
-
-    &.ch
-        color: #ff00ff
-
-    &.st
-        color: #dd0000
-
-    &.co
-        color: #808080
-        font-style: italic
-
-    &.al
-        color: #00ff00
-
-    &.fu
-        color: #000080
-
-    &.er
-        color: #ff0000
+.github-btn
+    height: 20px
+    width: 80px

@@ -1,1 +1,1 @@
-<iframe .btn-#{kind} .github-btn src=#{url} title=_{title}></iframe>
+<iframe .btn-#{kind} .github-btn src=#{url} title=_{githubSocialTitle}></iframe>

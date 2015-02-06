@@ -1,1 +1,4 @@
-#{pageMarkdown page}
+<main #more>
+    <div .wrapper>
+        <section #lambdacms-community .level1 .with-toc>
+            #{pageMarkdown page}

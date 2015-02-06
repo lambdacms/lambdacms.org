@@ -1,0 +1,5 @@
+if (localStorage['header-menu-open'] === 'true') {
+    document.getElementById('header-menu-bar').classList.add('open');
+    document.getElementById('header-menu').classList.add('open');
+    document.getElementById('header-button').classList.add('open');
+}

@@ -1,10 +1,12 @@
-<div .row .text-center>
-    <div .col-sx-12>
-        <h1>
-            <img src=@{StaticR img_logo_svg} .center-block .img-responsive .logo>
+<div #hero>
+    <div .hero-sash>
+        <div .wrapper>
+            <h1><img src=@{StaticR img_lamb_logo_text_svg}>
+            <p>^{githubSocial "lambdacms" (Just "lambdacms-core") "watch"} ^{githubSocial "lambdacms" (Just "lambdacms-core") "fork"}
+            <div #hero-button>
+                <a href="#lambdacms" title="More">More</a>
 
-        <ul .list-inline>
-            <li>^{githubSocial "lambdacms" (Just "lambdacms-core") "watch"}
-            <li>^{githubSocial "lambdacms" (Just "lambdacms-core") "fork"}
-
-#{pageMarkdown page}
+<main #more .hero>
+    <div .wrapper>
+        <section #lambdacms .level1>
+            #{pageMarkdown page}

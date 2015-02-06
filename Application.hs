@@ -39,7 +39,7 @@ import           System.Log.FastLogger                     (defaultBufSize,
 import           Handler.Common
 import           Handler.Page
 import           Handler.Tutorial
-import           LambdaCmsOrg.Tutorial
+-- import           LambdaCmsOrg.Tutorial
 import           LambdaCmsOrg.Page
 
 -- This line actually creates our YesodDispatch instance. It is the second half

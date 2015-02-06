@@ -4,7 +4,7 @@ module Handler.Tutorial where
 
 import           Import
 import           LambdaCms.Core
-import           Text.Markdown
+-- import           Text.Markdown
 
 getTutorialIndexR :: Handler Html
 getTutorialIndexR = do

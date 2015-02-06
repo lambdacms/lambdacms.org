@@ -3,20 +3,20 @@
 
 module Foundation where
 
-import qualified Data.Set              as S
-import           Database.Persist.Sql  (ConnectionPool, runSqlPool)
+import qualified Data.Set             as S
+import           Database.Persist.Sql (ConnectionPool, runSqlPool)
 import           Import.NoFoundation
 import           LambdaCms.Core
-import           LambdaCmsOrg.Tutorial
+-- import           LambdaCmsOrg.Tutorial
 import           LambdaCmsOrg.Page
-import qualified Network.Wai           as W
+import qualified Network.Wai          as W
 import           Roles
-import           Text.Hamlet           (hamletFile)
-import           Text.Jasmine          (minifym)
+import           Text.Hamlet          (hamletFile)
+import           Text.Jasmine         (minifym)
 -- import           Text.Julius           (juliusFile)
-import           Yesod.Auth.BrowserId  (authBrowserId)
-import           Yesod.Core.Types      (Logger)
-import           Yesod.Default.Util    (addStaticContentExternal)
+import           Yesod.Auth.BrowserId (authBrowserId)
+import           Yesod.Core.Types     (Logger)
+import           Yesod.Default.Util   (addStaticContentExternal)
 -- | The foundation datatype for your application. This can be a good place to
 -- keep settings and values requiring initialization before your application
 -- starts running, such as database connections. Every handler will have
@@ -68,7 +68,7 @@ instance Yesod App where
         mmsg <- getMessage
         can <- getCan
         mcr <- getCurrentRoute
-        renderMessage <- getMessageRender
+        messageRenderer <- getMessageRender
 
         -- We break up the default layout into two components:
         -- default-layout is the contents of the body tag, and
@@ -78,14 +78,17 @@ instance Yesod App where
 
         pc <- widgetToPageContent $ do
             $(combineStylesheets 'StaticR
-                [ css_bootstrap_css
+                [ css_main_css
                 ])
             $(combineScripts 'StaticR
                 [ js_jquery_js
-                , js_bootstrap_js
+                -- , js_bootstrap_js
+                , js_hoh_js
                 ])
             $(widgetFile "highlighting")
             $(widgetFile "default-layout")
+            addStylesheetRemote "http://fonts.googleapis.com/css?family=Oswald"
+            addStylesheetRemote "http://fonts.googleapis.com/css?family=Quattrocento"
         withUrlRenderer $(hamletFile "templates/default-layout-wrapper.hamlet")
 
     -- The page to be redirected to when authentication is required.
@@ -228,7 +231,7 @@ isAdmin = S.member Admin
 
 githubSocial :: Text -> Maybe Text -> Text -> Widget
 githubSocial user repo kind = do
-    let title = case kind of
+    let githubSocialTitle = case kind of
             "watch"  -> MsgGithubStar
             "fork"   -> MsgGithubFork
             "follow" -> MsgGithubFollow

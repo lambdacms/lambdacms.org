@@ -1,18 +1,15 @@
 $maybe msg <- mmsg
     <div #message>#{msg}
-<nav .navbar .navbar-default .navbar-static-top>
-    <div .container-fluid>
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div .navbar-header>
-            <button type=button .navbar-toggle .collapsed data-toggle=collapse data-target=#navbar>
-                <span .sr-only>_{MsgToggleNav}
-                <span .icon-bar>
-                <span .icon-bar>
-                <span .icon-bar>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div .collapse .navbar-collapse #navbar>
-            <ul .nav .navbar-nav>
+<header #top :mcr == Just HomeR:.hero>
+    <div .wrapper>
+        <nav #header-menu-bar .menu-bar>
+            <h1 .logotype .logo-ribbon>
+                <img src=@{StaticR img_lamb_logo_round_svg} .logotype-imgfix2>
+
+                <a href="/">Haskell on Heroku</a></h1>
+            <span #header-button .menu-button><a href="" title="Menu">Menu</a></span>
+            <ul #header-menu .menu>
                 $maybe r <- can (HomeR) "GET"
                     <li :Just r == mcr:.active><a href=@{r}>_{MsgHome}</a>
                 $maybe r <- can (DocumentationR) "GET"
@@ -20,32 +17,23 @@ $maybe msg <- mmsg
                 $maybe r <- can (CommunityR) "GET"
                     <li :Just r == mcr:.active><a href=@{r}>_{MsgCommunity}</a>
 
-                <li .dropdown>
-                    <a href=# .dropdown-toggle data-toggle=dropdown role=button aria-expanded=false>
-                        Github
-                        <span .caret>
-                    <ul .dropdown-menu role=menu>
-                        <li><a href=#>Core</a>
-                        <li><a href=#>Media</a>
+^{widget}
 
-<div .container-fluid .main-content>
-    ^{widget}
+<footer id="bottom">
+    <div class="wrapper">
+        <nav #footer-menu-bar .menu-bar>
+            <h1 .logotype .logo-ribbon>
+                <img src=@{StaticR img_lamb_logo_round_svg} .logotype-imgfix2>
+                <a href="/">Haskell on Heroku</a>
+            <span #footer-button .menu-button>
+                <a href="" title="Menu">Menu
+            <ul #footer-menu .menu .open>
+                $maybe r <- can (HomeR) "GET"
+                    <li :Just r == mcr:.active><a href=@{r}>_{MsgHome}</a>
+                $maybe r <- can (DocumentationR) "GET"
+                    <li :Just r == mcr:.active><a href=@{r}>_{MsgDocumentation}</a>
+                $maybe r <- can (CommunityR) "GET"
+                    <li :Just r == mcr:.active><a href=@{r}>_{MsgCommunity}</a>
 
-<footer>
-    <div .container .text-center>
-        <p .text-center .text-muted>#{preEscapedToMarkup $ renderMessage $ MsgCodeLicense "http://opensource.org/licenses/MIT" "MIT"}
-        <ul .list-inline>
-            <li>^{githubSocial "lambdacms" (Just "lambdacms-core") "watch"}
-            <li>^{githubSocial "lambdacms" (Just "lambdacms-core") "fork"}
-
-        <ul .list-inline .text-center .text-muted>
-            <li>_{MsgCurrentVersion $ appLambdacmsVersion $ appSettings master}
-            <li>·
-            <li><a href="https://github.com/lambdacms/lambdacms-org">GitHub</a>
-            <li>·
-            $maybe r <- can (TutorialR TutorialIndexR) "GET"
-                <li :Just r == mcr:.active><a href=@{r}>_{MsgTutorials}</a>
-            <li>·
-            <li><a href="https://github.com/lambdacms/lambdacms-core/issues">_{MsgIssues}</a>
-            <li>·
-            <li><a href="https://github.com/lambdacms/lambdacms-core/releases">_{MsgReleases}</a>
+        <aside>
+            <p>#{preEscapedToMarkup $ messageRenderer $ MsgCodeLicense "http://opensource.org/licenses/MIT" "MIT"} ^{githubSocial "lambdacms" (Just "lambdacms-core") "watch"} ^{githubSocial "lambdacms" (Just "lambdacms-core") "fork"}

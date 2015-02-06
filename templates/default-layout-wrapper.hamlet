@@ -1,7 +1,7 @@
 $newline never
 $doctype 5
 
-<html>
+<html :mcr == Just HomeR:.hero>
     <head>
         <meta charset="UTF-8">
 

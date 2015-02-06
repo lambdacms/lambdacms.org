@@ -5,7 +5,6 @@ module Handler.Page where
 import           Import
 import           LambdaCms.Core
 import           LambdaCmsOrg.Page
-import           Text.Markdown
 
 getHomeR :: Handler Html
 getHomeR = do
