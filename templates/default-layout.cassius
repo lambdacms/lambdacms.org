@@ -32,7 +32,3 @@
 ul.list-inline li
     display: inline
     float: right
-
-.github-btn
-    height: 20px
-    width: 80px

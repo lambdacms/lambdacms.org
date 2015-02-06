@@ -6,9 +6,28 @@ $doctype 5
         <meta charset="UTF-8">
 
         <title>#{pageTitle pc}
+
+        <link rel="apple-touch-icon" sizes="57x57" href=@{StaticR icons_apple_touch_icon_57x57_png}>
+        <link rel="apple-touch-icon" sizes="60x60" href=@{StaticR icons_apple_touch_icon_60x60_png}>
+        <link rel="apple-touch-icon" sizes="72x72" href=@{StaticR icons_apple_touch_icon_72x72_png}>
+        <link rel="apple-touch-icon" sizes="76x76" href=@{StaticR icons_apple_touch_icon_76x76_png}>
+        <link rel="apple-touch-icon" sizes="114x114" href=@{StaticR icons_apple_touch_icon_114x114_png}>
+        <link rel="apple-touch-icon" sizes="120x120" href=@{StaticR icons_apple_touch_icon_120x120_png}>
+        <link rel="apple-touch-icon" sizes="144x144" href=@{StaticR icons_apple_touch_icon_144x144_png}>
+        <link rel="apple-touch-icon" sizes="152x152" href=@{StaticR icons_apple_touch_icon_152x152_png}>
+        <link rel="apple-touch-icon" sizes="180x180" href=@{StaticR icons_apple_touch_icon_180x180_png}>
+        <link rel="icon" type="image/png" href=@{StaticR icons_favicon_32x32_png} sizes="32x32">
+        <link rel="icon" type="image/png" href=@{StaticR icons_android_chrome_192x192_png} sizes="192x192">
+        <link rel="icon" type="image/png" href=@{StaticR icons_favicon_96x96_png} sizes="96x96">
+        <link rel="icon" type="image/png" href=@{StaticR icons_favicon_16x16_png} sizes="16x16">
+        <link rel="manifest" href=@{StaticR icons_manifest_json}>
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content=@{StaticR icons_mstile_144x144_png}>
+        <meta name="msapplication-config" content=@{StaticR icons_browserconfig_xml}>
+        <meta name="theme-color" content="#ffffff">
         <meta charset=utf-8>
         <meta http-equiv=X-UA-Compatible content="IE=edge">
         <meta name=viewport content="width=device-width, initial-scale=1">
-            ^{pageHead pc}
-        <body>
-            ^{pageBody pc}
+        ^{pageHead pc}
+    <body>
+        ^{pageBody pc}

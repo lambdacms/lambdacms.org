@@ -22,9 +22,23 @@ h1,h2,h3,h4,h5 {
 
 nav#header-menu-bar.menu-bar a {
     color: #000000;
+    font-weight: bold;
 }
 nav#header-menu-bar.menu-bar {
     background: rgba(255, 255, 255, 0.5);
+}
+
+.hero-sash h1 {
+  padding-top: 40px;
+}
+.hero-sash h1 img {
+  max-width: 475px;
+  width: 80%;
+}
+
+.hero-sash div.wrapper p {
+  margin-top: -20px;
+  padding-left: 170px;
 }
 /* EOF own stuff */
 
@@ -127,7 +141,7 @@ html.no-transition *, html.no-transition :after, html.no-transition :before {
 
 :focus {
     /* outline: rgba(172, 92, 240, .4) solid 2px; */
-    outline-offset: 0
+    outline-offset: 0;
     outline: rgba(203, 162, 103, 0.4) solid 2px;
 }
 
@@ -3401,7 +3415,7 @@ footer a {
     .no-touch span.menu-button a.hover:after, .no-touch span.menu-button a:hover:after {
         background-image: url(../img/iconsheet-lcms.png);
         background-repeat: no-repeat;
-        background-position: -24px -48px;
+        background-position: -24px -0px;
         background-size: 120px 96px
     }
 }
@@ -4190,7 +4204,7 @@ footer a {
 
 @media (max-width:719px) {
     header.hero span.menu-button a {
-        opacity: .3;
+        opacity: .8;
         filter: none;
         -webkit-filter: none
     }
@@ -8766,12 +8780,12 @@ footer a {
 
     #hero p {
         max-width: 66.66667%;
-        margin: 16px auto
+        margin: -20px auto 16px auto
     }
 
     #hero-button {
         display: inline-block;
-        margin-bottom: 16px;
+        /* margin-bottom: 16px; */
         position: relative
     }
 
@@ -8784,7 +8798,7 @@ footer a {
         color: transparent;
         text-shadow: none;
         display: block;
-        height: 64px;
+        height: 37px;
         line-height: 64px;
         width: 88px;
         -webkit-transition: opacity 166.66667ms 0ms ease, filter 166.66667ms 0ms ease, -webkit-filter 166.66667ms 0ms ease;
@@ -8913,7 +8927,7 @@ footer a {
         width: 24px;
         height: 24px;
         position: absolute;
-        top: 20px;
+        /* top: 20px; */
         right: 32px;
         z-index: 3;
         pointer-events: none;

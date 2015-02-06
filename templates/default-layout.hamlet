@@ -5,9 +5,8 @@ $maybe msg <- mmsg
     <div .wrapper>
         <nav #header-menu-bar .menu-bar>
             <h1 .logotype .logo-ribbon>
-                <img src=@{StaticR img_lamb_logo_round_svg} .logotype-imgfix2>
 
-                <a href="/">Haskell on Heroku</a></h1>
+                <a href="/">LambdaCms</a></h1>
             <span #header-button .menu-button><a href="" title="Menu">Menu</a></span>
             <ul #header-menu .menu>
                 $maybe r <- can (HomeR) "GET"
@@ -23,7 +22,6 @@ $maybe msg <- mmsg
     <div class="wrapper">
         <nav #footer-menu-bar .menu-bar>
             <h1 .logotype .logo-ribbon>
-                <img src=@{StaticR img_lamb_logo_round_svg} .logotype-imgfix2>
                 <a href="/">Haskell on Heroku</a>
             <span #footer-button .menu-button>
                 <a href="" title="Menu">Menu
@@ -36,4 +34,4 @@ $maybe msg <- mmsg
                     <li :Just r == mcr:.active><a href=@{r}>_{MsgCommunity}</a>
 
         <aside>
-            <p>#{preEscapedToMarkup $ messageRenderer $ MsgCodeLicense "http://opensource.org/licenses/MIT" "MIT"} ^{githubSocial "lambdacms" (Just "lambdacms-core") "watch"} ^{githubSocial "lambdacms" (Just "lambdacms-core") "fork"}
+            <p>#{preEscapedToMarkup $ messageRenderer $ MsgCodeLicense "http://opensource.org/licenses/MIT" "MIT"}

@@ -87,6 +87,7 @@ instance Yesod App where
                 ])
             $(widgetFile "highlighting")
             $(widgetFile "default-layout")
+
             addStylesheetRemote "http://fonts.googleapis.com/css?family=Oswald"
             addStylesheetRemote "http://fonts.googleapis.com/css?family=Quattrocento"
         withUrlRenderer $(hamletFile "templates/default-layout-wrapper.hamlet")
@@ -238,7 +239,7 @@ githubSocial user repo kind = do
             "follow" -> MsgGithubFollow
             x        -> error . unpack $ "Type " <> x <> " is not supported."
 
-        url = "http://ghbtns.com/github-btn.html?user=" <> user
+        url = "http://ghbtns.com/github-btn.html?v=2&size=large&user=" <> user
               <> "&type=" <> kind
               <> "&count=true"
               <> (maybe "" ("&repo=" <>) repo)
