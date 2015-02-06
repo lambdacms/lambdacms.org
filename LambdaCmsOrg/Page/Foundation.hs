@@ -53,6 +53,7 @@ instance ToHuman PageType where
     toHuman Homepage      = "homepage"
     toHuman Documentation = "documentation"
     toHuman Community     = "community"
+    toHuman License       = "license"
 
 defaultPageAdminMenu :: LambdaCmsOrgPage master => (Route PageAdmin -> Route master) -> [AdminMenuItem master]
 defaultPageAdminMenu tp = [ MenuItem (SomeMessage Msg.MenuPage) (tp PageAdminIndexR) "file" ]
