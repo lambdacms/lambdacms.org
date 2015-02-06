@@ -17,6 +17,7 @@ import           ClassyPrelude             (tshow)
 import           Control.Arrow             ((&&&))
 import           Data.Maybe                (fromJust, fromMaybe, isJust)
 import           Data.Time                 (UTCTime, getCurrentTime, utctDay)
+import           LambdaCms.Core
 import           LambdaCms.Core.Settings
 import           LambdaCmsOrg.Page.Import
 import qualified LambdaCmsOrg.Page.Message as Msg
@@ -94,8 +95,7 @@ deletePageAdminEditR pageId = do
 pageForm :: Maybe Page -> UTCTime -> PageForm Page
 pageForm mPage utct = renderBootstrap3 BootstrapBasicForm $ Page
     <$> areq (selectField types) (bfs Msg.Type) (pageType <$> mPage)
-    <*> areq markdownField (withAttrs (bfs Msg.Content) [("rows", "20")]) (pageMarkdown <$> mPage)
+    <*> areq markdownField (withAttrs [("rows", "20")] (bfs Msg.Content)) (pageMarkdown <$> mPage)
     <*> pure (fromMaybe utct $ pageCreatedAt <$> mPage)
     <*  bootstrapSubmit (BootstrapSubmit Msg.Save " btn-success " [])
     where types = optionsPairs $ map (tshow &&& id) [minBound..maxBound]
-          withAttrs fs attrs = fs { fsAttrs = (fsAttrs fs) ++ attrs }
