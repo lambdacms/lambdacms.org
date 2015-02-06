@@ -14,7 +14,7 @@ import           Data.Typeable          (Typeable)
 import           Database.Persist.Quasi
 import           Text.Markdown
 import           Yesod
-import           Yesod.Text.Markdown
+import           Yesod.Text.Markdown    ()
 
 share [mkPersist sqlSettings, mkMigrate "migrateLambdaCmsOrgTutorial"]
     $(persistFileWith lowerCaseSettings "config/models")

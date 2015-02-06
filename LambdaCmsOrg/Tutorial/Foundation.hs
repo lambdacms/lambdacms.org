@@ -6,17 +6,19 @@
 {-# LANGUAGE TemplateHaskell       #-}
 {-# LANGUAGE TypeFamilies          #-}
 {-# LANGUAGE ViewPatterns          #-}
+{-# OPTIONS_GHC -fno-warn-orphans  #-}
 
 module LambdaCmsOrg.Tutorial.Foundation where
 
+import           Control.Arrow                 ((&&&))
+import           Data.Text                     (Text)
+import           Network.Wai                   (requestMethod)
 import           Yesod
-import           Data.Text                 (Text)
-import           Network.Wai               (requestMethod)
-import           Control.Arrow             ((&&&))
 
 import           LambdaCms.Core
 
-import           LambdaCmsOrg.Tutorial.Message (TutorialMessage, defaultMessage, englishMessage)
+import           LambdaCmsOrg.Tutorial.Message (TutorialMessage, defaultMessage,
+                                                englishMessage)
 import qualified LambdaCmsOrg.Tutorial.Message as Msg
 import           LambdaCmsOrg.Tutorial.Models
 

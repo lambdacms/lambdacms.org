@@ -16,6 +16,7 @@ module LambdaCmsOrg.Tutorial.Handler.Tutorial
 import           Data.Maybe                    (fromJust, fromMaybe, isJust)
 import           Data.Time                     (UTCTime, getCurrentTime,
                                                 utctDay)
+import           LambdaCms.Core
 import           LambdaCms.Core.Settings
 import           LambdaCmsOrg.Tutorial.Import
 import qualified LambdaCmsOrg.Tutorial.Message as Msg
@@ -93,8 +94,7 @@ deleteTutorialAdminEditR tutorialId = do
 tutorialForm :: Maybe Tutorial -> UTCTime -> TutorialForm Tutorial
 tutorialForm mTutorial utct = renderBootstrap3 BootstrapBasicForm $ Tutorial
     <$> areq textField (bfs Msg.Title) (tutorialTitle <$> mTutorial)
-    <*> areq textareaField (withAttrs (bfs Msg.Teaser) [("rows", "10")]) (tutorialTeaser <$> mTutorial)
-    <*> areq markdownField (withAttrs (bfs Msg.Content) [("rows", "20")]) (tutorialContent <$> mTutorial)
+    <*> areq textareaField (withAttrs [("rows", "10")] (bfs Msg.Teaser)) (tutorialTeaser <$> mTutorial)
+    <*> areq markdownField (withAttrs [("rows", "20")] (bfs Msg.Content)) (tutorialContent <$> mTutorial)
     <*> pure (fromMaybe utct $ tutorialCreatedAt <$> mTutorial)
     <*  bootstrapSubmit (BootstrapSubmit Msg.Save " btn-success " [])
-    where withAttrs fs attrs = fs { fsAttrs = (fsAttrs fs) ++ attrs }
