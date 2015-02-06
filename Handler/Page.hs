@@ -31,7 +31,7 @@ getDocumentationIndexR = do
 
 getLicenseR :: Handler Html
 getLicenseR = do
-    Entity _ page <- runDB . getBy404 $ UniquePage Documentation
+    Entity _ page <- runDB . getBy404 $ UniquePage License
     defaultLayout $ do
         setTitle "License"
         $(widgetFile "page")
