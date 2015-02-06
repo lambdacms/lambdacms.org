@@ -18,7 +18,7 @@ getCommunityR = do
     Entity _ page <- runDB . getBy404 $ UniquePage Community
     defaultLayout $ do
         setTitle "Community"
-        $(widgetFile "community")
+        $(widgetFile "page")
 
 getDocumentationIndexR :: Handler Html
 getDocumentationIndexR = do
@@ -28,3 +28,10 @@ getDocumentationIndexR = do
     defaultLayout $ do
         setTitle "Documentation"
         $(widgetFile "documentation")
+
+getLicenseR :: Handler Html
+getLicenseR = do
+    Entity _ page <- runDB . getBy404 $ UniquePage License
+    defaultLayout $ do
+        setTitle "License"
+        $(widgetFile "page")

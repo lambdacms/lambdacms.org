@@ -68,7 +68,6 @@ instance Yesod App where
         mmsg <- getMessage
         can <- getCan
         mcr <- getCurrentRoute
-        messageRenderer <- getMessageRender
 
         -- We break up the default layout into two components:
         -- default-layout is the contents of the body tag, and
@@ -152,15 +151,9 @@ instance YesodAuth App where
     -- Override the above two destinations when a Referer: header is present
     redirectToReferer _ = True
 
-    getAuthId creds = do
-        timeNow <- lift getCurrentTime
-        runDB $ do
-            x <- getBy $ UniqueEmail $ credsIdent creds
-            case x of
-                Just (Entity uid _) -> do
-                    _ <- update uid [UserLastLogin =. Just timeNow] -- update last login time during the login process
-                    return $ Just uid
-                Nothing -> return Nothing
+    getAuthId = getLambdaCmsAuthId
+
+    maybeAuthId = lambdaCmsMaybeAuthId
 
     -- You can add other plugins like BrowserID, email or OAuth here
     authPlugins _ = [authBrowserId def]
@@ -179,6 +172,7 @@ instance LambdaCmsAdmin App where
     actionAllowedFor (CoreAdminR (AdminStaticR _)) "GET"     = Unauthenticated
     actionAllowedFor (CoreAdminR (UserAdminActivateR _ _)) _ = Unauthenticated
     actionAllowedFor (CommunityR)                  "GET"     = Unauthenticated
+    actionAllowedFor (LicenseR)                    "GET"     = Unauthenticated
     actionAllowedFor (DocumentationR _)            "GET"     = Unauthenticated
     actionAllowedFor _          _                            = Roles $ S.fromList [Admin]
 

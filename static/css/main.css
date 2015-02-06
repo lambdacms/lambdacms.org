@@ -40,6 +40,15 @@ nav#header-menu-bar.menu-bar {
   margin-top: -20px;
   padding-left: 170px;
 }
+
+footer aside a {
+    color: #496FA8 !important;
+}
+footer aside a:hover {
+    color: #344e77 !important;
+}
+
+
 /* EOF own stuff */
 
 
@@ -148,7 +157,7 @@ html.no-transition *, html.no-transition :after, html.no-transition :before {
 a {
     cursor: pointer;
     text-shadow: none;
-    color: #6d6661;
+    color: #496FA8;
     -webkit-transition: box-shadow 166.66667ms 0ms ease, color 166.66667ms 0ms ease, text-shadow 166.66667ms 0ms ease;
     transition: box-shadow 166.66667ms 0ms ease, color 166.66667ms 0ms ease, text-shadow 166.66667ms 0ms ease
 }
@@ -170,7 +179,7 @@ a {
 }
 
 .no-touch a.hover, .no-touch a:active, .no-touch a:hover, .no-touch a:hover:active, .touch a:active, a:focus {
-    color: #3a2e1d
+    color: #344e77
 }
 
 footer a {
