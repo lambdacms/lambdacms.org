@@ -5,10 +5,9 @@
 
 /              HomeR          GET
 /community     CommunityR     GET
-/documentation DocumentationR GET
 
-/tutorials        TutorialR:
-    /             TutorialIndexR       GET
+/documentation    DocumentationR:
+    /             DocumentationIndexR       GET
     /#TutorialId  TutorialShowR        GET
 
 /admin/tutorials   TutorialAdminR        TutorialAdmin   getTutorialAdmin

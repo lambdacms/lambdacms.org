@@ -12,7 +12,7 @@ $maybe msg <- mmsg
             <ul #header-menu .menu>
                 $maybe r <- can (HomeR) "GET"
                     <li :Just r == mcr:.active><a href=@{r}>_{MsgHome}</a>
-                $maybe r <- can (DocumentationR) "GET"
+                $maybe r <- can (DocumentationR DocumentationIndexR) "GET"
                     <li :Just r == mcr:.active><a href=@{r}>_{MsgDocumentation}</a>
                 $maybe r <- can (CommunityR) "GET"
                     <li :Just r == mcr:.active><a href=@{r}>_{MsgCommunity}</a>
@@ -30,7 +30,7 @@ $maybe msg <- mmsg
             <ul #footer-menu .menu .open>
                 $maybe r <- can (HomeR) "GET"
                     <li :Just r == mcr:.active><a href=@{r}>_{MsgHome}</a>
-                $maybe r <- can (DocumentationR) "GET"
+                $maybe r <- can (DocumentationR DocumentationIndexR) "GET"
                     <li :Just r == mcr:.active><a href=@{r}>_{MsgDocumentation}</a>
                 $maybe r <- can (CommunityR) "GET"
                     <li :Just r == mcr:.active><a href=@{r}>_{MsgCommunity}</a>

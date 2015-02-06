@@ -177,9 +177,8 @@ instance LambdaCmsAdmin App where
     actionAllowedFor (AuthR _)  _                            = Unauthenticated
     actionAllowedFor (CoreAdminR (AdminStaticR _)) "GET"     = Unauthenticated
     actionAllowedFor (CoreAdminR (UserAdminActivateR _ _)) _ = Unauthenticated
-    actionAllowedFor (TutorialR _)                 "GET"     = Unauthenticated
     actionAllowedFor (CommunityR)                  "GET"     = Unauthenticated
-    actionAllowedFor (DocumentationR)              "GET"     = Unauthenticated
+    actionAllowedFor (DocumentationR _)            "GET"     = Unauthenticated
     actionAllowedFor _          _                            = Roles $ S.fromList [Admin]
 
     coreR = CoreAdminR
@@ -198,7 +197,7 @@ instance LambdaCmsAdmin App where
     adminMenu = (defaultCoreAdminMenu CoreAdminR)
                 ++ (defaultPageAdminMenu PageAdminR)
                 ++ (defaultTutorialAdminMenu TutorialAdminR)
-    renderLanguages _ = ["en", "nl"]
+    renderLanguages _ = ["en"]
 
     mayAssignRoles = do
         authId <- requireAuthId

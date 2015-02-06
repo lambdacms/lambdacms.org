@@ -20,8 +20,8 @@ getCommunityR = do
         setTitle "Community"
         $(widgetFile "community")
 
-getDocumentationR :: Handler Html
-getDocumentationR = do
+getDocumentationIndexR :: Handler Html
+getDocumentationIndexR = do
     can <- getCan
     Entity _ page <- runDB . getBy404 $ UniquePage Documentation
     (tutorials :: [Entity Tutorial]) <- runDB $ selectList [] []
