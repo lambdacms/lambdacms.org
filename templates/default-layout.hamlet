@@ -36,4 +36,11 @@ $maybe msg <- mmsg
                     <li :Just r == mcr:.active><a href=@{r}>_{MsgCommunity}</a>
 
         <aside>
-            <p>#{preEscapedToMarkup $ messageRenderer $ MsgCodeLicense "http://opensource.org/licenses/MIT" "MIT"} ^{githubSocial "lambdacms" (Just "lambdacms-core") "watch"} ^{githubSocial "lambdacms" (Just "lambdacms-core") "fork"}
+            <p>
+                Copyright &copy; 2015, #
+                <a href="http://www.hoppinger.com">Hoppinger BV
+                \ - Code licensed under #
+                $maybe r <- can (LicenseR) "GET"
+                    <a href=@{r}>MIT
+                $nothing
+                    <a href="https://github.com/lambdacms/lambdacms-core/blob/master/LICENSE">MIT

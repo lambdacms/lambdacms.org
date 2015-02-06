@@ -68,7 +68,6 @@ instance Yesod App where
         mmsg <- getMessage
         can <- getCan
         mcr <- getCurrentRoute
-        messageRenderer <- getMessageRender
 
         -- We break up the default layout into two components:
         -- default-layout is the contents of the body tag, and
@@ -172,6 +171,7 @@ instance LambdaCmsAdmin App where
     actionAllowedFor (CoreAdminR (AdminStaticR _)) "GET"     = Unauthenticated
     actionAllowedFor (CoreAdminR (UserAdminActivateR _ _)) _ = Unauthenticated
     actionAllowedFor (CommunityR)                  "GET"     = Unauthenticated
+    actionAllowedFor (LicenseR)                    "GET"     = Unauthenticated
     actionAllowedFor (DocumentationR _)            "GET"     = Unauthenticated
     actionAllowedFor _          _                            = Roles $ S.fromList [Admin]
 
