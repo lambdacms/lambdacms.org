@@ -5,6 +5,7 @@
 
 /              HomeR          GET
 /community     CommunityR     GET
+/license       LicenseR       GET
 
 /documentation    DocumentationR:
     /             DocumentationIndexR       GET
