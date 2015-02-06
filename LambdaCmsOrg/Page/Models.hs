@@ -13,8 +13,8 @@ import           Data.Typeable              (Typeable)
 import           Database.Persist.Quasi
 import           LambdaCmsOrg.Page.PageType
 import           Text.Markdown
-import           Yesod.Text.Markdown
 import           Yesod
+import           Yesod.Text.Markdown        ()
 
 share [mkPersist sqlSettings, mkMigrate "migrateLambdaCmsOrgPage"]
     $(persistFileWith lowerCaseSettings "config/models")
