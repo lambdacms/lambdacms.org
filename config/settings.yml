@@ -7,7 +7,7 @@ port:              "_env:PORT:3000"
 approot:           "_env:APPROOT:http://localhost:3000"
 ip-from-header:    "_env:IP_FROM_HEADER:false"
 admin:             "_env:LAMBDACMS_ADMIN:admin@lambdacms.org"
-lambdacms-version: "_env:LAMBDACMS_VERSION:v0.0.7"
+lambdacms-version: "_env:LAMBDACMS_VERSION:v0.0.8"
 
 # Optional values with the following production defaults.
 # In development, they default to the inverse.
