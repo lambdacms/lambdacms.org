@@ -198,6 +198,8 @@ instance LambdaCmsAdmin App where
         roles <- getUserRoles authId
         return $ isAdmin roles
 
+    lambdaCmsSendMail = lift . renderSendMail
+
 instance LambdaCmsOrgTutorial App where
     tutorialR = TutorialAdminR
 
