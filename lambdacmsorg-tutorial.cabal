@@ -2,13 +2,13 @@ name:               lambdacmsorg-tutorial
 version:            0.0.0
 license:            MIT
 license-file:       LICENSE
-author:
-maintainer:
+author:             Hoppinger BV
+maintainer:         Cies Breijs
 copyright:          (c) 2015
-bug-reports:
-homepage:
-synopsis:           LambdaCmsOrg Tutorial
-description:        Content Management System (CMS) Tutorial Extension
+bug-reports:        https://github.com/lambdacms/lambdacms.org-tutorial/issues
+homepage:           http://lambdacms.org
+synopsis:           Tutorial extension
+description:        Tutorial extension for the lambdacms.org website
 stability:          alpha
 category:           web
 build-type:         Simple
