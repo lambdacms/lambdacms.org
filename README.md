@@ -3,9 +3,12 @@ lambdacms.org-base
 
 This repository contains the "base" [Yesod](http://yesodweb.com) application
 for the LambdaCms-based [lambdacms.org](http://lambdacms.org) website.
+A typical "base" app in a LambdaCms-site contains mainly the styling for the
+content types which the *extensions* implement and provide admin interface
+sections for. Hence this repository contains mostly CSS code.
 
-All LambdaCms *extensions* (which are LambdaCms specific Yesod subsites) are
-dependecies of this "base" app, and are hooked up from here.
+All LambdaCms *extensions* (which are merely LambdaCms specific Yesod
+subsites) are dependecies of this "base" app, and are wired-up up from here.
 
 Currently it makes use of the following extensions:
 
