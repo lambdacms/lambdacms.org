@@ -1,7 +1,8 @@
-name:              lambdacms-dot-org
+name:              lambdacmsorg-base
 version:           0.0.0
 cabal-version:     >= 1.8
 build-type:        Simple
+description:       Base Yesod application for the LambdaCms-based lambdacms.org site.
 
 Flag dev
     Description:   Turn on development settings, like auto-reload templates.
