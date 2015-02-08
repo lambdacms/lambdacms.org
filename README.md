@@ -1,7 +1,7 @@
 lambdacmsorg-page
 =================
 
-lambdacmsorg-page is a [LambdaCms](http://lambdacms.org) extension
+`lambdacmsorg-page` is a [LambdaCms](http://lambdacms.org) extension
 specific to the `lambdacms.org` website. It provides a "page" content
 type and an admin interface section to manage them.
 
