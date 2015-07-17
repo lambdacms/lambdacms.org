@@ -30,7 +30,6 @@ We plan to also make use of:
 ## Installing
 
 ```
-git clone https://github.com/lambdacms/lambdacms-core.git
 git clone https://github.com/lambdacms/lambdacms.org-page.git
 git clone https://github.com/lambdacms/lambdacms.org-tutorial.git
 git clone https://github.com/lambdacms/lambdacms.org-base.git
