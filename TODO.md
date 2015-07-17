@@ -13,4 +13,6 @@ TODOs
 * Add a demo site
 * Some sort of backup
 * Maybe add analythics
-
+* Add performance paper
+* Add more spacing over headings in text `<h1>` - `<h6>`
+* Replace favicon
