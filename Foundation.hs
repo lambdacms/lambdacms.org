@@ -64,7 +64,6 @@ instance Yesod App where
         "/tmp/client_session_key.aes"
 
     defaultLayout widget = do
-        master <- getYesod
         mmsg <- getMessage
         can <- getCan
         mcr <- getCurrentRoute

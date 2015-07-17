@@ -1,10 +1,10 @@
 flags: {}
 packages:
 - '.'
-- '../lambdacms-core'
 - '../lambdacms.org-page'
 - '../lambdacms.org-tutorial'
 extra-deps:
+- lambdacms-core-0.2.0.0
 - friendly-time-0.4
 - lists-0.4.2
 - list-extras-0.4.1.4
