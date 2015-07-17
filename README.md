@@ -27,6 +27,30 @@ We plan to also make use of:
   providing media (pictures, etc.) management functionality.
 
 
+## Installing
+
+```
+git clone https://github.com/lambdacms/lambdacms-core.git
+git clone https://github.com/lambdacms/lambdacms.org-page.git
+git clone https://github.com/lambdacms/lambdacms.org-tutorial.git
+git clone https://github.com/lambdacms/lambdacms.org-base.git
+
+cd lambdacms.org-base
+
+stack setup    ;# installs GHC 7.10 if not already installed
+stack install  ;# builds and installs the lambdacmsorg website
+
+lambdacmsorg   ;# starts the server to serve the site
+
+```
+
+This project assumes Postgres as a database. For instructions setting up
+Postgress for the use with LambdaCms please refer to the
+[README of lambdacms-core](https://github.com/lambdacms/lambdacms-core).
+Without setting up Postgress the buld step will complain `pg_config` is
+missing.
+
+
 ## License
 
 The files in this repository are MIT licensed, as specified in the
