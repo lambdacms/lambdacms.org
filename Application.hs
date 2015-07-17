@@ -117,7 +117,7 @@ makeFoundation appSettings' = do
         _ -> return ()
     -- insert non existing pages
     (pages :: [Entity Page]) <- flip runSqlPool pool $ selectList [] []
-    let (types :: [PageType] ) = filter (`notElem` (map (pageType . entityVal) pages)) [minBound..maxBound]
+    let (types :: [PageType] ) = filter (`onotElem` (map (pageType . entityVal) pages)) [minBound..maxBound]
     flip runSqlPool pool $ mapM_ (\t -> insert_ $ Page t "" timeNow) types
 
     return theFoundation

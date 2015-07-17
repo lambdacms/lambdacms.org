@@ -3,8 +3,7 @@
 module Handler.Tutorial where
 
 import           Import
-import           LambdaCms.Core
--- import           Text.Markdown
+
 
 getTutorialShowR :: TutorialId -> Handler Html
 getTutorialShowR tutorialId = do

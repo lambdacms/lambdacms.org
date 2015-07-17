@@ -1,6 +1,7 @@
 TODOs
 =====
 
+* Make a multi-package Stack repo for all of lambdacms.org-*
 * Add screenshots
 * Add performance paper
 * Add hover states to nav bar
