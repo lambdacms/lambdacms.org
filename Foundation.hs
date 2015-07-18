@@ -150,7 +150,7 @@ instance YesodAuth App where
     -- Override the above two destinations when a Referer: header is present
     redirectToReferer _ = True
 
-    getAuthId = getLambdaCmsAuthId
+    authenticate = authenticateByLambdaCms
 
     maybeAuthId = lambdaCmsMaybeAuthId
 
