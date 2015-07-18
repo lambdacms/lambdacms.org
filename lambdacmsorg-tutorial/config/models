@@ -1,0 +1,6 @@
+Tutorial
+    title Text
+    teaser Textarea
+    content Markdown
+    createdAt UTCTime
+    deriving Typeable Show
