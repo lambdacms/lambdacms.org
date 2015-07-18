@@ -164,16 +164,16 @@ instance YesodAuth App where
 instance LambdaCmsAdmin App where
     type Roles App = RoleName
 
-    actionAllowedFor (FaviconR)                    "GET"     = Unauthenticated
-    actionAllowedFor (RobotsR)                     "GET"     = Unauthenticated
-    actionAllowedFor (HomeR)                       "GET"     = Unauthenticated
-    actionAllowedFor (AuthR _)  _                            = Unauthenticated
-    actionAllowedFor (CoreAdminR (AdminStaticR _)) "GET"     = Unauthenticated
-    actionAllowedFor (CoreAdminR (UserAdminActivateR _ _)) _ = Unauthenticated
-    actionAllowedFor (CommunityR)                  "GET"     = Unauthenticated
-    actionAllowedFor (LicenseR)                    "GET"     = Unauthenticated
-    actionAllowedFor (DocumentationR _)            "GET"     = Unauthenticated
-    actionAllowedFor _          _                            = Roles $ S.fromList [Admin]
+    actionAllowedFor (FaviconR)                            "GET" = AllowAll
+    actionAllowedFor (RobotsR)                             "GET" = AllowAll
+    actionAllowedFor (HomeR)                               "GET" = AllowAll
+    actionAllowedFor (AuthR _)                             _     = AllowAll
+    actionAllowedFor (CoreAdminR (AdminStaticR _))         "GET" = AllowAll
+    actionAllowedFor (CoreAdminR (UserAdminActivateR _ _)) _     = AllowAll
+    actionAllowedFor (CommunityR)                          "GET" = AllowAll
+    actionAllowedFor (LicenseR)                            "GET" = AllowAll
+    actionAllowedFor (DocumentationR _)                    "GET" = AllowAll
+    actionAllowedFor _                                     _     = AllowRoles $ S.fromList [Admin]
 
     coreR = CoreAdminR
     authR = AuthR
