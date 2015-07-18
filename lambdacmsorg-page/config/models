@@ -1,0 +1,6 @@
+Page
+    type PageType
+    markdown Markdown
+    createdAt UTCTime
+    UniquePage type
+    deriving Typeable Show

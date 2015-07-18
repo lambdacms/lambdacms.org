@@ -1,0 +1,33 @@
+<div .row>
+    <div .col-xs-12>
+        $maybe r <- can (coreR AdminHomeR) "GET"
+            <a href=@{r}>
+                <span .glyphicon .glyphicon-arrow-left>
+                _{Msg.Back}
+<div .page-header>
+    <h1>_{Msg.PageIndex}
+    $maybe r <- can (pageR PageAdminNewR) "GET"
+        <a .btn .btn-primary .btn-xs href=@{r}>
+            <span .glyphicon .glyphicon-plus>
+            _{Msg.NewPage}
+<div .row>
+    <div .col-xs-12>
+        $if null pages
+            <p .alert .alert-info>_{Msg.NoPagesFound}
+        $else
+            <div .table-responsive>
+                <table .table .table-striped .table-hover>
+                    <thead>
+                        <tr>
+                            <th>_{Msg.Type}
+                            <th>_{Msg.CreatedOn}
+                    <tbody>
+                        $forall (Entity pageId page) <- pages
+                            $with mroute <- can (pageR $ PageAdminEditR pageId) "GET"
+                                <tr :isJust mroute:onclick="document.location.href='@{fromJust mroute}'">
+                                    <td>
+                                        $maybe r <- mroute
+                                            <a href=@{r}>#{show $ pageType page}
+                                        $nothing
+                                            #{show $ pageType page}
+                                    <td>#{show $ utctDay $ pageCreatedAt page}

@@ -1,0 +1,3 @@
+/                 PageAdminIndexR   GET
+/new              PageAdminNewR     GET POST
+!/#PageId        PageAdminEditR    GET PATCH DELETE
