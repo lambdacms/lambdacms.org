@@ -40,7 +40,7 @@ library
   build-depends:    base
                   , yesod
                   , yesod-form
-                  , lambdacms-core                >= 0.0.8      && < 0.1
+                  , lambdacms-core                >= 0.2      && < 0.4
                   , persistent
                   , persistent-template
                   , classy-prelude
