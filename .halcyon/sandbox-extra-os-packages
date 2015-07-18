@@ -1,2 +1,0 @@
-linux-(centos|fedora):postgresql-devel
-linux-(debian|ubuntu):libpq-dev

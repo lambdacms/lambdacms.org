@@ -1,2 +1,0 @@
-linux-(centos|fedora):postgresql-libs
-linux-(debian|ubuntu):libpq5
