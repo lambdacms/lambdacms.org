@@ -30,9 +30,9 @@ We plan to also make use of:
 ## Installing
 
 ```
-git clone https://github.com/lambdacms/lambdacms.org-page.git
-git clone https://github.com/lambdacms/lambdacms.org-tutorial.git
-git clone https://github.com/lambdacms/lambdacms.org-base.git
+git clone https://github.com/lambdacms/lambdacms.org-page.git     lambdacmsorg-page
+git clone https://github.com/lambdacms/lambdacms.org-tutorial.git lambdacmsorg-tutorial
+git clone https://github.com/lambdacms/lambdacms.org-base.git     lambdacmsorg-base
 
 cd lambdacms.org-base
 
