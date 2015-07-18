@@ -1,0 +1,44 @@
+$maybe msg <- mmsg
+    <div #message>#{msg}
+
+<header #top :mcr == Just HomeR:.hero>
+    <div .wrapper>
+        <nav #header-menu-bar .menu-bar>
+            <h1 .logotype .logo-ribbon>
+
+                <a href="/">LambdaCms</a></h1>
+            <span #header-button .menu-button><a href="" title="Menu">Menu</a></span>
+            <ul #header-menu .menu>
+                $maybe r <- can (HomeR) "GET"
+                    <li :Just r == mcr:.active><a href=@{r}>_{MsgHome}</a>
+                $maybe r <- can (DocumentationR DocumentationIndexR) "GET"
+                    <li :Just r == mcr:.active><a href=@{r}>_{MsgDocumentation}</a>
+                $maybe r <- can (CommunityR) "GET"
+                    <li :Just r == mcr:.active><a href=@{r}>_{MsgCommunity}</a>
+
+^{widget}
+
+<footer id="bottom">
+    <div class="wrapper">
+        <nav #footer-menu-bar .menu-bar>
+            <h1 .logotype .logo-ribbon>
+                <a href="/">Haskell on Heroku</a>
+            <span #footer-button .menu-button>
+                <a href="" title="Menu">Menu
+            <ul #footer-menu .menu .open>
+                $maybe r <- can (HomeR) "GET"
+                    <li :Just r == mcr:.active><a href=@{r}>_{MsgHome}</a>
+                $maybe r <- can (DocumentationR DocumentationIndexR) "GET"
+                    <li :Just r == mcr:.active><a href=@{r}>_{MsgDocumentation}</a>
+                $maybe r <- can (CommunityR) "GET"
+                    <li :Just r == mcr:.active><a href=@{r}>_{MsgCommunity}</a>
+
+        <aside>
+            <p>
+                Copyright &copy; 2015, #
+                <a href="http://www.hoppinger.com">Hoppinger BV
+                \ - Code licensed under #
+                $maybe r <- can (LicenseR) "GET"
+                    <a href=@{r}>MIT
+                $nothing
+                    <a href="https://github.com/lambdacms/lambdacms-core/blob/master/LICENSE">MIT

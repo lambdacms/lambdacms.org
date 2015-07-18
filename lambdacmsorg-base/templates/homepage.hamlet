@@ -1,0 +1,12 @@
+<div #hero>
+    <div .hero-sash>
+        <div .wrapper>
+            <h1><img src=@{StaticR img_lamb_logo_text_svg}>
+            <p>^{githubSocial "lambdacms" (Just "lambdacms-core") "watch"} ^{githubSocial "lambdacms" (Just "lambdacms-core") "fork"}
+            <div #hero-button>
+                <a href="#lambdacms" title="More">More</a>
+
+<main #more .hero>
+    <div .wrapper>
+        <section #lambdacms .level1>
+            #{pageMarkdown page}

@@ -1,0 +1,1 @@
+<iframe .btn-#{kind} src=#{url} title=_{githubSocialTitle} width="160px" height="30px"></iframe>

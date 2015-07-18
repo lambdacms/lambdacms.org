@@ -1,0 +1,14 @@
+<main #more>
+    <div .wrapper>
+        <section #lambdacms-tutorials .level1 .with-toc>
+            <h1>LambdaCms Tutorials
+            <p>A motivational line!
+            <p>Another one!
+
+            <div>
+                <nav #main-toc>
+                    <ul .toc .toc1 .menu .open>
+                        $forall Entity tutorialId tutorial <- tutorials
+                            $maybe r <- can (TutorialR $ TutorialShowR tutorialId) "GET"
+                                <li>
+                                    <a href=@{r}>#{tutorialTitle tutorial}

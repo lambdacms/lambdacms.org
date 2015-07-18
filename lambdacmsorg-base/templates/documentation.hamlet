@@ -1,0 +1,16 @@
+<main #more>
+    <div .wrapper>
+        <section #lambdacms-documentation .level1 .with-toc>
+            #{pageMarkdown page}
+
+            $if not $ null tutorials
+                <section #lambdacms-tutorials .level2>
+                    <h2>Tutorials
+
+                    <div>
+                        <nav #main-toc>
+                            <ul .toc .toc1 .menu .open>
+                                $forall Entity tutorialId tutorial <- tutorials
+                                    $maybe r <- can (DocumentationR $ TutorialShowR tutorialId) "GET"
+                                        <li>
+                                            <a href=@{r}>#{tutorialTitle tutorial}

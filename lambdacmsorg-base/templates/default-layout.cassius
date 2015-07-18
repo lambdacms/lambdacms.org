@@ -1,0 +1,34 @@
+.logotype-imgfix
+    background-position: 24px center
+    padding-left: 24px
+    height: 100%
+    line-height: 48px
+    position: absolute
+    float: left
+    top: 0
+
+.logotype-imgfix2
+    background-position: 24px center
+    padding-left: 24px
+    height: 80%
+    line-height: 48px
+    float: left
+    top: 0
+    bottom:0
+
+
+.logo-ribbon
+    position: relative
+
+.logo-ribbon img
+    position: absolute
+    top: 0
+    bottom: 0
+    margin: auto
+
+.disp-inline
+    display: inline
+
+ul.list-inline li
+    display: inline
+    float: right
