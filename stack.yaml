@@ -1,8 +1,8 @@
 flags: {}
 packages:
-- '.'
-- '../lambdacmsorg-page'
-- '../lambdacmsorg-tutorial'
+- lambdacmsorg-base
+- lambdacmsorg-page
+- lambdacmsorg-tutorial
 extra-deps:
 - lambdacms-core-0.3.0.0
 - friendly-time-0.4
