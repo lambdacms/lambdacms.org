@@ -43,17 +43,18 @@ Without setting up Postgress the buld step will complain `pg_config` is
 missing.
 
 
-```
+```bash
 git clone https://github.com/lambdacms/lambdacms.org
 cd lambdacms.org/lambdacmsorg-base
 
 stack setup    ;# installs GHC 7.10 if not already installed
 stack install  ;# builds and installs the lambdacmsorg website
 
-lambdacmsorg   ;# starts the server to serve the site
-
+lambdacmsorg   ;# starts the server
 ```
 
+Now fire some requests at it by pointing your browser to:
+[`http://localhost:3000/admin`](http://localhost:3000)
 
 
 ## License
