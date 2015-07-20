@@ -1,5 +1,4 @@
-The lambdacms.org website's code
-================================
+#The lambdacms.org website &nbsp;[![Build Status](https://travis-ci.org/lambdacms/lambdacms.org.svg?branch=master)](https://travis-ci.org/lambdacms/lambdacms.org)
 
 This repository contains all packages making up the
 [lambdacms.org](http://lambdacms.org) website, which are:
