@@ -1,2 +1,9 @@
+# These database credentials are needed by Travis.
+# Please do not commit your own values.
 database:
-  database: lambdacms-dot-org_test
+  user:     "_env:PGUSER:postgres"
+  password: "_env:PGPASS:"
+  host:     "_env:PGHOST:localhost"
+  port:     "_env:PGPORT:5432"
+  database: "_env:PGDATABASE:lambdacmsorg_test"
+  poolsize: "_env:PGPOOLSIZE:10"

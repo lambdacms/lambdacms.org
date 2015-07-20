@@ -30,7 +30,7 @@ install:
   - ./.travis_long.sh stack --no-terminal --skip-ghc-check test --only-snapshot
 
 before_script:
-  - psql -c 'create database lambdacms_travis;' -U postgres
+  - psql -c 'create database lambdacmsorg_test;' -U postgres
 
 script:
   - stack --no-terminal --skip-ghc-check test
