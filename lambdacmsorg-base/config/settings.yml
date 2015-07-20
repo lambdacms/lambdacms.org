@@ -19,12 +19,14 @@ lambdacms-version: "_env:LAMBDACMS_VERSION:v0.0.8"
 # mutable-static: false
 # skip-combining: false
 
+# These database credentials are needed by Travis.
+# Please do not commit your own values.
 database:
-  user:     "_env:PGUSER:lambdacms_dot_org"
-  password: "_env:PGPASS:lambdacms_dot_org"
+  user:     "_env:PGUSER:postgres"
+  password: "_env:PGPASS:"
   host:     "_env:PGHOST:localhost"
   port:     "_env:PGPORT:5432"
-  database: "_env:PGDATABASE:lambdacms_dot_org"
+  database: "_env:PGDATABASE:lambdacms_travis"
   poolsize: "_env:PGPOOLSIZE:10"
 
 copyright: Insert copyright statement here
