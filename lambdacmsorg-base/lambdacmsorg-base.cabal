@@ -1,16 +1,45 @@
-name:              lambdacmsorg-base
-version:           0.1.1
-cabal-version:     >= 1.8
-build-type:        Simple
-description:       Base Yesod application for the LambdaCms-based lambdacms.org site.
+name:               lambdacmsorg-base
+version:            0.1.1
+license:            MIT
+license-file:       ../LICENSE
+author:             Hoppinger BV
+maintainer:         Cies Breijs
+copyright:          (c) 2015
+bug-reports:        https://github.com/lambdacms/lambdacms.org/issues
+homepage:           http://lambdacms.org
+synopsis:           Base application for lambdacms.org
+description:        Base Yesod application for the LambdaCms-based lambdacms.org site.
+stability:          alpha
+category:           web
+build-type:         Simple
+cabal-version:      >= 1.18
+tested-with:        GHC >= 7.10
+extra-doc-files:    ../README.md
+extra-source-files: templates/default-layout.cassius
+                  , templates/default-layout.hamlet
+                  , templates/default-layout.julius
+                  , templates/default-layout-wrapper.hamlet
+                  , templates/documentation.hamlet
+                  , templates/github-social.hamlet
+                  , templates/highlighting.julius
+                  , templates/highlighting.lucius
+                  , templates/homepage.cassius
+                  , templates/homepage.hamlet
+                  , templates/homepage.julius
+                  , templates/page.hamlet
+                  , templates/tutorials/show.hamlet
+                  , templates/tutorials/show.julius
+                  , templates/tutorials/index.hamlet
+                  , config/models
+                  , config/routes
 
 Flag dev
-    Description:   Turn on development settings, like auto-reload templates.
-    Default:       False
+    Description:    Turn on development settings, like auto-reload templates.
+    Default:        False
 
 Flag library-only
-    Description:   Build for use with "yesod devel"
-    Default:       False
+    Description:    Build for use with "yesod devel"
+    Default:        False
 
 library
     hs-source-dirs: ., app
