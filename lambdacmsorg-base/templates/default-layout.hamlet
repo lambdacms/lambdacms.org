@@ -41,4 +41,4 @@ $maybe msg <- mmsg
                 $maybe r <- can (LicenseR) "GET"
                     <a href=@{r}>MIT
                 $nothing
-                    <a href="https://github.com/lambdacms/lambdacms-core/blob/master/LICENSE">MIT
+                    <a href="https://github.com/lambdacms/lambdacms/blob/master/LICENSE">MIT
